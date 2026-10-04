@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+.announcement{
+  padding: 5px;
+  background-color: rgb(40, 52, 66);  
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  color:white;
+  font-size: x-large;
+}
+
+.announcement span {
+  display: inline-block;
+  animation: moveText 15s linear infinite;
+}
+
+
+@keyframes moveText {
+  from {
+    transform: translateX(50%);
+  }
+
+  to {
+    transform: translateX(-90%);
+  }
+}

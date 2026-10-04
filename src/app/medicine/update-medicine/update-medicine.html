@@ -1,0 +1,74 @@
+
+
+
+
+
+<nav style="padding:10px;background-color: rgb(40, 52, 66) " class="navbar navbar-expand-lg">
+        
+    <a style="color: white; font-weight: 700;" class="navbar-brand " routerLink="admin">RAZA HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+            <a style="color: white;"class="nav-link active" aria-current="page" routerLink="/view-medicine">View Medicine</a>
+        </li>        
+        
+      </ul>
+
+      <div class="mx-2">
+        
+        <button style="margin: 5px;"class="btn btn-success" data-toggle="modal" data-target="#loginModal"><a style="color:white;" href="javascript:void(0);" routerLink="/admin">Back</a></button>
+        
+    </div>
+
+    </div>
+  
+</nav>
+  <br>
+<div class="container"> 
+
+    <div class="announcement">
+        <span>
+            Welcome to Admin Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment
+        </span>    
+    </div>
+    <hr>
+<!-- <hr>
+  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" (input)="searchPatients()"> 
+  <br> -->
+    <h2 style="text-align: center;margin-top: 20px;  font-weight: 700; font-size: 40px;">Update Data</h2>
+
+    <div class="tableFixHead">
+<br>
+
+<div style="display: flex; width: 500px;   height: 300px;   background-color: rgb(40, 52, 66) ;color: white;flex-direction: row;  box-shadow: -20px 10px 30px black; border-radius: 10px; margin-bottom: 20px;" class="container">
+
+
+    <form style="padding: 20px;" (ngSubmit)="onSubmit()">
+
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Drug Name :</label>
+            <input type="text" id="drugName" name="drugName" class="form-control" placeholder="Enter drugName" [(ngModel)]="medicine().drugName">
+
+        </div>
+        <br>
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Stock :</label>
+            <input type="text" id="stock" name="stock" class="form-control" placeholder="Enter stock" [(ngModel)]="medicine().stock">
+
+        </div>
+
+        <br> 
+        <div style="display: flex; justify-content: space-between;">    
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button class="btn btn-success" routerLink="/view-medicine">Back</button>
+        </div>    
+    </form>
+
+
+</div>

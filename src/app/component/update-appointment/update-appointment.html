@@ -1,0 +1,87 @@
+
+
+
+
+
+<nav style="padding:10px;background-color: rgb(40, 52, 66) " class="navbar navbar-expand-lg">
+        
+    <a style="color: white; font-weight: 700;" class="navbar-brand " routerLink="admin">RAZA HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+            <a style="color: white;"class="nav-link active" aria-current="page" routerLink="/admin">Go Back Admin</a>
+        </li>        
+        
+      </ul>
+
+      <div class="mx-2">
+        
+        <button style="margin: 5px;"class="btn btn-success" data-toggle="modal" data-target="#loginModal"><a style="color:white;" href="javascript:void(0);" routerLink="/appoint">Back</a></button>
+        
+    </div>
+
+    </div>
+  
+</nav>
+  <br>
+<div class="container"> 
+
+    <div class="announcement">
+        <span>
+            Welcome to Admin Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment
+        </span>    
+    </div>
+    <hr>
+<!-- <hr>
+  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" (input)="searchPatients()"> 
+  <br> -->
+    <h2 style="text-align: center;margin-top: 20px;  font-weight: 700; font-size: 40px;">Update Appointment</h2>
+
+    <div class="tableFixHead">
+<br>
+
+<div style="display: flex; width: 450px;   height: 440px;   background-color: rgb(40, 52, 66) ;color: white;flex-direction: row;  box-shadow: -20px 10px 30px black; border-radius: 10px; margin-bottom: 40px;" class="container">
+
+
+    <form style=" padding: 40px;" (ngSubmit)="onSubmit()">
+
+        <div style="width: 350px;" class="form-group">
+            <label for="">Patient Name :</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter name" [(ngModel)]="appointment().name">
+
+        </div>
+        <br>
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Patient Age :</label>
+            <input type="text" id="age" name="age" class="form-control" placeholder="Enter age" [(ngModel)]="appointment().age">
+
+        </div>
+        <br>
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Symptoms :</label>
+            <input type="text" id="symptoms" name="symptoms" class="form-control" placeholder="Enter symptoms" [(ngModel)]="appointment().symptoms">
+
+        </div>  
+        <br>      
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Phone Number :</label>
+            <input type="text" id="number" name="number" class="form-control" placeholder="Enter number" [(ngModel)]="appointment().number">
+
+        </div>
+        <br>
+        <div style="display: flex; justify-content: space-between;">    
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button class="btn btn-success" routerLink="/appoint">Back</button>
+        </div>    
+    </form>
+
+
+</div>
+

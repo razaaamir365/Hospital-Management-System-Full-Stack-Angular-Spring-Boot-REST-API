@@ -1,0 +1,102 @@
+
+
+<nav style="padding:10px;background-color: rgb(40, 52, 66) " class="navbar navbar-expand-lg">
+        
+    <a style="color: white; font-weight: 700;" class="navbar-brand " routerLink="admin">RAZA HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+            <a style="color: white;"class="nav-link active" aria-current="page" routerLink="/view-medicine">View Medicines</a>
+        </li>        
+        <li class="nav-item">
+            <a style="color: white;"class="nav-link active" aria-current="page" routerLink="/appoint">Appointments</a>
+        </li>
+        
+      </ul>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a style="color: white; width: fit-content; font-weight: 700;" class="nav-link active" aria-current="page" routerLink="/docdesh">Patient List</a>
+        </li>
+    </ul>
+
+    <div class="mx-2">
+        
+        <button style="margin: 5px;"class="btn btn-danger" data-toggle="modal" data-target="#loginModal"><a style="color:white;" href="javascript:void(0);" (click)="logout()">Logout</a></button>
+        
+    </div>
+
+    </div>
+  
+  </nav>
+  
+  <div class="container"> 
+
+    <h2 style="text-align: center;margin-top: 20px; font-weight: 700; font-size: 40px;">Admin Dashboard</h2>
+
+   
+        <div class="announcement">
+        <span>
+            Welcome to Admin Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment
+        </span>    
+    </div>
+    <hr>
+<!-- <hr>
+  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" (input)="searchPatients()"> 
+  <br> -->
+    <a style="color: rgb(86, 86, 86); font-weight: 700; font-size: xx-large;">Current Patient List in the Queue</a>
+<div class="tableFixHead">
+  <br>
+<div style="display: flex; width: 1300px;   height: auto;   background-color: rgb(231, 234, 239) ;color: white;flex-direction: row;  box-shadow: -20px 10px 30px black; border-radius: 10px; margin-bottom: 40px;" class="container">
+<table class="table table-striped">
+    <thead>
+
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood</th>
+            <th>Prescription</th>
+            <th>Dose</th>
+            <th>Fees</th>
+            <th>Urgency</th>
+            <th>City Name</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @for (patient of patients() ; track patient.id) {
+            <tr>
+
+                <td>{{patient.id}}</td>
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.blood}}</td>
+                <td>{{patient.prescription}}</td>
+                <td>{{patient.dose}}</td>
+                <td>{{patient.fees}}</td>
+                <td>{{patient.urgency}}</td>
+                <td>{{patient.city}}</td>
+
+                <td>
+
+                  <button (click)="delete(patient.id!)" class="btn btn-danger">Delete</button>
+                  <button (click)="update(patient.id)"  style="margin: 10px;" class="btn btn-info">Update</button>
+
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+    <button class="btn btn-success" routerLink="/createpatient">Add Patient</button>
+</table>
+</div>
+

@@ -1,0 +1,64 @@
+
+
+
+
+
+
+<nav style="padding:10px; background-color:rgb(40, 52, 66)" class="navbar navbar-expand-lg ">
+        
+    <a style="color: white; font-weight: 700;" class="navbar-brand " routerLink="admin">RAZA HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  </nav>
+  <div class="container">
+  <hr>
+        <div style="display: flex; justify-content: start;">
+            <div style="width: 60px; text-align: center; border-radius: 7px; background-color: blueviolet;" class="nav-item">
+                <a style="color: white; padding: 2px;"class="nav-link active " aria-current="page" routerLink="/view-medicine">Back</a>
+            </div>
+        </div>
+
+    <br>
+    <div class="announcement">
+        <span>
+            Welcome to Admin Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment
+        </span>    
+    </div>        
+  <hr>
+  <!-- <hr>
+  <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" (input)="searchPatients()"> 
+  <br> -->
+<div class="tableFixHead">
+  <br>
+
+<div style="width: 500px;  border-radius: 30px; background-color: rgb(87, 77, 77); color: white; box-shadow: 0 4px 15px blueviolet; padding: 20px; margin: 30px;" class="container">
+
+    <form style="padding: 20px;" (ngSubmit)="onSubmit()">
+
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Drug Name :</label>
+            <input type="text" id="drugName" name="drugName" class="form-control" placeholder="Enter drugName" [(ngModel)]="medicines.drugName">
+
+        </div>
+        <br>
+        <div style="width: 350px;" class="form-group">
+
+            <label for="">Stock :</label>
+            <input type="text" id="stock" name="stock" class="form-control" placeholder="Enter stock" [(ngModel)]="medicines.stock">
+
+        </div>  
+        <br>
+    <div style="display: flex; justify-content: space-between;">    
+        <button type="submit" class="btn btn-success">Submit</button>
+        <div style="display: flex; justify-content: end;">
+            <div style="width: 60px; text-align: center; border-radius: 7px; background-color: red;">
+                <a style="color: white; padding: 2px;"class="nav-link active " aria-current="page" routerLink="/view-medicine">Cancel</a>
+            </div>
+        </div>
+    </div>    
+    </form>
+
+</div>
